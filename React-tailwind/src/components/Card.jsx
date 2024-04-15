@@ -1,6 +1,6 @@
-import nubes from "../imagenes/LightRain.png";
 import moment from "moment-timezone";
 import "moment/locale/es";
+import weatherPhotos from "../helpers/helpers";
 
 function Card({ objeto }) {
   return (
@@ -11,7 +11,11 @@ function Card({ objeto }) {
         </h3>
       )}
 
-      <img className="mx-auto h-24 w-24" src={nubes} alt="Nubes"></img>
+      <img
+        className="mx-auto h-24 w-24"
+        src={weatherPhotos(objeto.weather[0].main)}
+        alt="Nubes"
+      ></img>
       <div className="flex justify-center  mt-12 text-customLetters">
         {objeto && objeto.main && objeto.main.feels_like && (
           <h1 className="font-sans text-xl">

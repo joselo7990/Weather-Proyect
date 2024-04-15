@@ -13,7 +13,7 @@ function Body() {
   const weatherList =
     weather && weather.list && weather.list.length >= 40 ? weather.list : [];
 
-  // Toma el primer objeto y luego selecciona cada 15 objeto
+  // Tomo el primer objeto
   const objetosAMostrar = [weatherList[0]];
   for (let i = 1; i < weatherList.length; i += 13) {
     if (weatherList[i]) {
@@ -21,6 +21,7 @@ function Body() {
       objetosAMostrar.push(weatherList[i]);
     }
   }
+  console.log(objetosAMostrar);
 
   return (
     <div className=" bg-customBody py-12 px-12">
@@ -37,7 +38,7 @@ function Body() {
 
       <div className="grid lg:grid-cols-4 grid-cols-2 mt-20 ml-8 mr-8">
         {objetosAMostrar.map((objeto) => (
-          <Card objeto={objeto} />
+          <Card key={crypto.randomUUID()} objeto={objeto} />
         ))}
       </div>
       <div>
@@ -46,7 +47,7 @@ function Body() {
         </h1>
         <div className="grid grid-cols-2 gap-4 place-items-center mr-8">
           {objetosAMostrar.map((objeto) => (
-            <TodayCard objeto={objeto} />
+            <TodayCard key={crypto.randomUUID()} objeto={objeto} />
           ))}
         </div>
       </div>
