@@ -12,6 +12,9 @@ export default {
       customBody: "rgb(16,14,29)",
       backHolder: "rgb(110,112,122)",
     },
+    gap: {
+      20: "5rem", // Personaliza el tamaño de espacio según tu necesidad
+    },
   },
   plugins: [],
 };

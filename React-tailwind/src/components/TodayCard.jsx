@@ -1,8 +1,8 @@
 function TodayCard({ objeto }) {
   return (
-    <div className="w-72 h-40 bg-customColor font-sans text-customLetters mt-10 ml-10 flex justify-center">
-      <div>
-        <h3 className="font-sans text-2xl">Wind Status</h3>
+    <div className="w-72 h-40 bg-customColor font-sans text-customLetters mt-8 ml-10 flex justify-center items-center">
+      <div className="text-center">
+        <h1 className="font-sans text-xl">Wind Status</h1>
         {objeto && objeto.wind && objeto.wind.speed && (
           <h1 className="font-sans text-5xl">
             {" "}

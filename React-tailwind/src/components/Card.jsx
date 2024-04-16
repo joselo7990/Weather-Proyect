@@ -4,7 +4,7 @@ import weatherPhotos from "../helpers/helpers";
 
 function Card({ objeto }) {
   return (
-    <div className="w-max h-max overflow-hidden shadow-lg  bg-customColor mt-2">
+    <div className="w-max h-max overflow-hidden shadow-lg  bg-customColor mt-2 mr-2 ml-2">
       {objeto && objeto.dt && (
         <h3 className="text-center text-customLetters text-2xl">
           {moment(objeto.dt_txt).format("LLLL").split(",")[0]}

@@ -44,7 +44,7 @@ function Body() {
         <h1 className="font-sans text-customLetters text-5xl mt-20 ml-10">
           Today's Highlights
         </h1>
-        <div className="grid grid-cols-2 gap-4 place-items-center mr-8">
+        <div className="grid grid-cols-2 gap-20 place-items-center">
           {objetosAMostrar.map((objeto) => (
             <TodayCard key={crypto.randomUUID()} objeto={objeto} />
           ))}
