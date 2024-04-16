@@ -3,7 +3,6 @@ import "moment/locale/es";
 import weatherPhotos from "../helpers/helpers";
 
 function Card({ objeto }) {
-  console.log(objeto);
   return (
     <div className="w-max h-max overflow-hidden shadow-lg  bg-customColor mt-2">
       {objeto && objeto.dt && (

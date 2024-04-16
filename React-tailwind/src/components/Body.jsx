@@ -21,7 +21,6 @@ function Body() {
       objetosAMostrar.push(weatherList[i]);
     }
   }
-  console.log(objetosAMostrar);
 
   return (
     <div className=" bg-customBody py-12 px-12">

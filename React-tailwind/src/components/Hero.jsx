@@ -9,7 +9,7 @@ import weatherPhotos from "../helpers/helpers";
 function Hero(props) {
   const { places, changePlaces } = props;
   const { weather } = useContext(WeaherContext);
-  console.log(weather);
+
   return (
     <>
       {weather && (
@@ -29,10 +29,11 @@ function Hero(props) {
                 weather.list &&
                 weather.list[0] &&
                 weather.list[0].weather &&
-                weather.list[0].weather[0] && (
+                weather.list[0].weather[0] &&
+                weather.list[0].weather[0].main && (
                   <img
                     src={weatherPhotos(weather.list[0].weather[0].main)}
-                    alt="Sol"
+                    alt="fotoClima"
                     className="w-10 h-10"
                   />
                 )}
@@ -44,12 +45,19 @@ function Hero(props) {
               alt=""
               style={{ width: "100%", height: "150px", objectFit: "cover" }}
             />
-            <img
-              src={lluvia}
-              alt=""
-              className="absolute inset-0 m-auto"
-              style={{ zIndex: "1", width: "120px" }}
-            />
+            {weather &&
+              weather.list &&
+              weather.list[0] &&
+              weather.list[0].weather &&
+              weather.list[0].weather[0] &&
+              weather.list[0].weather[0].main && (
+                <img
+                  src={weatherPhotos(weather.list[0].weather[0].main)}
+                  alt=""
+                  className="absolute inset-0 m-auto"
+                  style={{ zIndex: "1", width: "120px" }}
+                />
+              )}
           </div>
           <div className="flex justify-center mt-24 text-customLetters">
             {weather &&
