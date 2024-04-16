@@ -1,15 +1,15 @@
-import fondo from "../imagenes/Clear.png";
-import background from "../imagenes/Cloud-background.png";
-import lluvia from "../imagenes/HeavyRain.png";
+import background from "/imagenes/Cloud-background.png";
+import lluvia from "/imagenes/HeavyRain.png";
 import { WeaherContext } from "../context/apiCall";
 import { useContext } from "react";
 import moment from "moment-timezone";
 import "moment/locale/es";
+import weatherPhotos from "../helpers/helpers";
 
 function Hero(props) {
   const { places, changePlaces } = props;
   const { weather } = useContext(WeaherContext);
-
+  console.log(weather);
   return (
     <>
       {weather && (
@@ -23,8 +23,19 @@ function Hero(props) {
                 Search for places
               </p>
             </div>
+
             <div className="inline-flex items-center mr-5 mt-5">
-              <img src={lluvia} alt="Sol" className="w-10 h-10" />
+              {weather &&
+                weather.list &&
+                weather.list[0] &&
+                weather.list[0].weather &&
+                weather.list[0].weather[0] && (
+                  <img
+                    src={weatherPhotos(weather.list[0].weather[0].main)}
+                    alt="Sol"
+                    className="w-10 h-10"
+                  />
+                )}
             </div>
           </div>
           <div className="mt-20 relative">
